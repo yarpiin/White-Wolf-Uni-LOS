@@ -1,6 +1,24 @@
 
 Project name: White-Wolf-Uni-LOS
 
+02/07/2020
+
+  * version 22
+  * exynos9810: dts: we have four fast cpus (Slawek) [cd0df23811ba]
+  * exynos-hotplug: allow  userspace to set triple usermode (Slawek) [030f261d21df]
+  * defconfig: enable IP_NF_TARGET_TTL (Slawek) [f5cfc117b306]
+  * locking/atomics, asm-generic/bitops/atomic.h: Rewrite using atomic_*() APIs (Will Deacon) [8e959957321e]
+  * tcp_cubic: fix spurious HYSTART_DELAY exit upon drop in min RTT (Neal Cardwell) [f43a32cd9572]
+  * drivers/cpufreq/cpufreq_governor.c needs the LATENCY_MULTIPLIER define (Ian Macdonald) [52b3c5272c86]
+  * scripts: don't append "+" to localversion (Sultan Alsawaf) [282597f84903]
+  * input: touchscreen: Require low latency (Siarhei Vishniakou) [8f097b192a55]
+  * input: Remove PM QoS latency request (Diep Quynh) [b0b5b177709b]
+  * sched: correct definition of dirty_sched_domain_sysctl (Jesse Chan) [fda2b7c2519d]
+  * Makefile: clang: explicitly call -no-integrated-as (Jesse Chan) [552cd8885950]
+  * arm64: cpu_errata: include required headers (Arnd Bergmann) [7d64162cfd3d]
+  * kernel: Update stock config for /proc/config.gz (Slawek) [161d187d02a2]
+  * crownlte: disable sec debug (Slawek) [154a3956ff89]
+
 24/06/2020
 
   * version 21 (Slawek) [502265099b5c]
