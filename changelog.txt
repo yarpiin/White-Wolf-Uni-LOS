@@ -1,6 +1,18 @@
 
 Project name: White-Wolf-Uni-LOS
 
+29/09/2020
+
+  * version 24
+  * defconfig: set hide magisk mounts (Slawek) [a4cec559daa8]
+  * defconfig: KEEP MPTCP DISABLED !!! (FAROVITUS) [b607e817f7af]
+  * HACK: fs/proc: block access to mounts for "IsolatedService" (ThunderStorms21th nalas) [3a2cdafc08a7]
+  * fs/proc: hide magisk mounts for IsolatedService (Denis Efremov) [30c78e1cf180]
+  * PM/Sleep: Start killing wakelocks after two minutes of idle (120s) (Tyler Nijmeh) [ffc814e49beb]
+  * sched/fair: Make scheduling period more efficient (ThunderStorms21th) [224d9293a9db]
+  * ANDROID: sched/fair: initialise util_est values to 0 on fork (credp) [dae2651a223b]
+  * defconfig: set CONFIG_CRYPTO_CRC32 (synt4x93) [b344b4ad748b]
+
 25/07/2020
 
   * version 23
