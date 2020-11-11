@@ -19,14 +19,14 @@ STAR2DEFCONFIG="exynos9810-star2lte_defconfig"
 CROWNDEFCONFIG="exynos9810-crownlte_defconfig"
 
 # Build dirs
-KERNEL_DIR="/home/yarpiin/Android/Kernel/UNI/White-Wolf-Uni-LOS"
+KERNEL_DIR="/home/yarpiin/Android/Kernel/Samsung/White-Wolf-Uni-LOS"
 RESOURCE_DIR="$KERNEL_DIR/.."
-KERNELFLASHER_DIR="/home/yarpiin/Android/Kernel/UNI/Build/KernelFlasher"
+KERNELFLASHER_DIR="/home/yarpiin/Android/Kernel/Samsung/Kernel_Flasher"
 TOOLCHAIN_DIR="/home/yarpiin/Android/Toolchains"
 
 # Kernel Details
 BASE_YARPIIN_VER="WHITE.WOLF.UNI.Q"
-VER=".024"
+VER=".025"
 LOS_VER=".LOS"
 YARPIIN_VER="$BASE_YARPIIN_VER$VER"
 YARPIIN_LOS_VER="$BASE_YARPIIN_VER$LOS_VER$VER"
@@ -41,7 +41,7 @@ export KBUILD_BUILD_USER=yarpiin
 export KBUILD_BUILD_HOST=kernel
 
 # Image dirs
-ZIP_MOVE="/home/yarpiin/Android/Kernel/UNI/Zip"
+ZIP_MOVE="/home/yarpiin/Android/Kernel/Zip"
 ZIMAGE_DIR="$KERNEL_DIR/out/arch/arm64/boot"
 
 # Functions
@@ -60,7 +60,7 @@ function make_star_kernel {
         export LOCALVERSION=-`echo $STAR_VER$YARPIIN_LOS_VER`
         make O=out ARCH=arm64 $STARDEFCONFIG
 
-        PATH="/home/yarpiin/Android/Toolchains/Clang/bin:/home/yarpiin/Android/Toolchains/aarch64-linux-android-4.9/bin:${PATH}" \
+        PATH="/home/yarpiin/Android/Toolchains/google-clang/bin:/home/yarpiin/Android/Toolchains/google-gcc/bin:${PATH}" \
         make -j$(nproc --all) O=out \
                       ARCH=arm64 \
                       CC=clang \
@@ -76,7 +76,7 @@ function make_star2_kernel {
         export LOCALVERSION=-`echo $STAR2_VER$YARPIIN_LOS_VER`
         make O=out ARCH=arm64 $STAR2DEFCONFIG
 
-        PATH="/home/yarpiin/Android/Toolchains/Clang/bin:/home/yarpiin/Android/Toolchains/aarch64-linux-android-4.9/bin:${PATH}" \
+        PATH="/home/yarpiin/Android/Toolchains/google-clang/bin:/home/yarpiin/Android/Toolchains/google-gcc/bin:${PATH}" \
         make -j$(nproc --all) O=out \
                       ARCH=arm64 \
                       CC=clang \
@@ -92,7 +92,7 @@ function make_crown_kernel {
         export LOCALVERSION=-`echo $CROWN_VER$YARPIIN_LOS_VER`
         make O=out ARCH=arm64 $CROWNDEFCONFIG
 
-        PATH="/home/yarpiin/Android/Toolchains/Clang/bin:/home/yarpiin/Android/Toolchains/aarch64-linux-android-4.9/bin:${PATH}" \
+        PATH="/home/yarpiin/Android/Toolchains/google-clang/bin:/home/yarpiin/Android/Toolchains/google-gcc/bin:${PATH}" \
         make -j$(nproc --all) O=out \
                       ARCH=arm64 \
                       CC=clang \
